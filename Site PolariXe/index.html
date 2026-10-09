@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BALISES MÉTA SEO -->
+    <title>PolariXe | Agence de Communication Digitale à Yaoundé</title>
+    <meta name="description" content="PolariXe, agence de communication digitale à Yaoundé. Gestion de réseaux sociaux, création de contenu, photo/vidéo, publicité en ligne et communication institutionnelle pour entreprises et établissements scolaires au Cameroun.">
+    <meta name="keywords" content="agence communication Yaoundé, community manager Cameroun, gestion réseaux sociaux, création contenu, photographie, publicité digitale, agence digitale Yaoundé, PolariXe">
+    <meta name="author" content="PolariXe">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PolariXe | Agence de Communication Digitale">
+    <meta property="og:description" content="Votre image mérite de rayonner. Nous la faisons grandir.">
+    <meta property="og:image" content="affiche.jpg">
+    <meta property="og:url" content="https://polarixe.cm">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PolariXe | Agence de Communication Digitale">
+    <meta name="twitter:description" content="Votre image mérite de rayonner. Nous la faisons grandir.">
+    <meta name="twitter:image" content="affiche.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --violet: #4a2fa8;
+            --violet-dark: #35207a;
+            --violet-light: #6b4fd4;
+            --cyan: #00b4ff;
+            --cyan-light: #4dc9ff;
+            --dark-blue: #1a0f3d;
+            --text-grey: #5a5678;
+            --light-bg: #f7f6fc;
+            --white: #ffffff;
+            --shadow: 0 30px 60px rgba(74, 47, 168, 0.15);
+            --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body.dark-mode {
+            --dark-blue: #e2e8f0;
+            --text-grey: #a0aec0;
+            --light-bg: #0a0620;
+            --white: #150b33;
+            --shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-blue);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* Polices spécifiques */
+        body[data-lang="zh"] { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+        body[data-lang="ja"] { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+        body[data-lang="ar"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; direction: rtl; }
+        body[data-lang="ar"] .hero-tagline { letter-spacing: 4px; }
+        body[data-lang="ar"] nav { flex-direction: row-reverse; }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: -0.02em; }
+        body[data-lang="zh"] h1, body[data-lang="zh"] h2, body[data-lang="zh"] h3, body[data-lang="zh"] h4 { font-family: 'Noto Sans SC', sans-serif; }
+        body[data-lang="ja"] h1, body[data-lang="ja"] h2, body[data-lang="ja"] h3, body[data-lang="ja"] h4 { font-family: 'Noto Sans JP', sans-serif; }
+        body[data-lang="ar"] h1, body[data-lang="ar"] h2, body[data-lang="ar"] h3, body[data-lang="ar"] h4 { font-family: 'Noto Sans Arabic', sans-serif; }
+
+        .progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, var(--violet), var(--cyan));
+            width: 0%; z-index: 2000; transition: width 0.1s ease;
+        }
+
+        /* --- EN-TÊTE --- */
+        header {
+            background-color: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(0px);
+            padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s ease;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 10px 5%;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        body.dark-mode header.scrolled {
+            background-color: rgba(21, 11, 51, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        header:not(.scrolled) nav a,
+        header:not(.scrolled) .control-btn { color: #ffffff; border-color: #ffffff; }
+        header:not(.scrolled) .logo-container img { filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
+
+        .logo-container img { height: 50px; display: block; transition: filter 0.4s ease; }
+
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a {
+            text-decoration: none; color: var(--dark-blue);
+            font-weight: 500; font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 2px;
+            transition: var(--transition); position: relative;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 2px; background: var(--violet);
+            transition: var(--transition);
+        }
+        nav a:hover { color: var(--violet) !important; }
+        nav a:hover::after { width: 100%; }
+
+        .controls { display: flex; gap: 10px; align-items: center; }
+        .control-btn {
+            background: transparent;
+            border: 1.5px solid var(--violet);
+            color: var(--violet);
+            width: 40px; height: 40px;
+            border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+            padding: 0;
+        }
+        .control-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .control-btn:hover {
+            background: var(--violet); color: var(--white) !important;
+            transform: scale(1.1);
+        }
+        .lang-btn {
+            width: auto; padding: 0 16px; border-radius: 25px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+            gap: 6px;
+        }
+        .lang-btn .flag { font-size: 1rem; }
+
+        /* --- SÉLECTEUR DE LANGUE --- */
+        .lang-panel-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 6, 32, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1500;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .lang-panel-overlay.active { opacity: 1; visibility: visible; }
+
+        .lang-panel {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: var(--white);
+            z-index: 1600;
+            padding: 40px 5% 50px;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            max-height: 100vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        body.dark-mode .lang-panel { background: #150b33; }
+        .lang-panel.active { transform: translateY(0); }
+
+        .lang-panel-header {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1000px; margin: 0 auto 40px;
+        }
+        .lang-panel-header h3 {
+            font-size: 2rem; color: var(--dark-blue);
+            font-family: 'Playfair Display', serif;
+        }
+        .lang-close {
+            background: transparent;
+            border: 2px solid var(--violet);
+            color: var(--violet);
+            width: 45px; height: 45px;
+            border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        .lang-close:hover {
+            background: var(--violet); color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .lang-option {
+            background: var(--light-bg);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 18px 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+            font-family: inherit;
+            color: var(--dark-blue);
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .lang-panel.active .lang-option {
+            animation: fadeInLang 0.5s ease forwards;
+        }
+        .lang-panel.active .lang-option:nth-child(1) { animation-delay: 0.05s; }
+        .lang-panel.active .lang-option:nth-child(2) { animation-delay: 0.1s; }
+        .lang-panel.active .lang-option:nth-child(3) { animation-delay: 0.15s; }
+        .lang-panel.active .lang-option:nth-child(4) { animation-delay: 0.2s; }
+        .lang-panel.active .lang-option:nth-child(5) { animation-delay: 0.25s; }
+        .lang-panel.active .lang-option:nth-child(6) { animation-delay: 0.3s; }
+        .lang-panel.active .lang-option:nth-child(7) { animation-delay: 0.35s; }
+        .lang-panel.active .lang-option:nth-child(8) { animation-delay: 0.4s; }
+        .lang-panel.active .lang-option:nth-child(9) { animation-delay: 0.45s; }
+
+        @keyframes fadeInLang {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lang-option:hover {
+            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(74, 47, 168, 0.3);
+        }
+        .lang-option.active {
+            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            color: #fff;
+            border-color: var(--cyan);
+        }
+
+        .lang-option .flag {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .lang-option .lang-info {
+            display: flex; flex-direction: column;
+        }
+        .lang-option .lang-name {
+            font-weight: 700; font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+        .lang-option .lang-native {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .btn-primary {
+            background-color: var(--violet); color: var(--white);
+            padding: 14px 32px; border-radius: 4px;
+            text-decoration: none; font-weight: 600; font-size: 0.85rem;
+            transition: var(--transition); border: 2px solid var(--violet);
+            display: inline-flex; align-items: center; gap: 10px;
+            cursor: pointer; letter-spacing: 2px; text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary:hover { background-color: transparent; color: var(--violet); }
+
+        /* --- HERO --- */
+        .hero {
+            background-image: url('affiche.jpg');
+            background-size: cover; background-position: center;
+            background-attachment: fixed;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; min-height: 100vh;
+            padding: 160px 5% 80px; position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(26, 15, 61, 0.88) 0%, rgba(74, 47, 168, 0.75) 100%);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 1100px; color: #ffffff; }
+
+        .hero-logo {
+            height: 240px; 
+            margin-bottom: 30px;
+            animation: fadeInDown 1.2s ease 0.2s forwards;
+            opacity: 0;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+        }
+
+        .hero-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; font-weight: 500;
+            letter-spacing: 8px; text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+        }
+        .hero-tagline::before, .hero-tagline::after {
+            content: ''; width: 50px; height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-slogan {
+            font-family: 'Playfair Display', serif;
+            font-style: italic; font-size: 2rem;
+            color: #ffffff; font-weight: 400;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 25px 0; margin-bottom: 45px;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            min-height: 100px;
+            min-width: 400px;
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 2px; height: 1.2em;
+            background: var(--cyan);
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+            display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent; color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 14px 32px; border-radius: 4px;
+            text-decoration: none; font-weight: 600; font-size: 0.85rem;
+            transition: var(--transition); letter-spacing: 2px;
+            text-transform: uppercase; display: inline-flex; align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-outline:hover { background: #ffffff; color: var(--violet); border-color: #ffffff; }
+
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .reveal { opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- SPARKLES --- */
+        .sparkle {
+            position: fixed;
+            width: 8px; height: 8px;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--cyan-light) 0%, var(--violet) 50%, transparent 100%);
+            box-shadow: 0 0 10px var(--cyan);
+            animation: sparkleAnim 0.8s ease-out forwards;
+        }
+        @keyframes sparkleAnim {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(0) translateY(-20px); opacity: 0; }
+        }
+
+        /* --- CHIFFRES CLÉS --- */
+        .stats-section { padding: 80px 5%; background: var(--white); transition: background-color 0.5s ease; }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px; max-width: 1100px; margin: 0 auto; text-align: center;
+        }
+        .stat-item { padding: 30px 20px; border-right: 1px solid rgba(74, 47, 168, 0.1); }
+        .stat-item:last-child { border-right: none; }
+        body.dark-mode .stat-item { border-right-color: rgba(255,255,255,0.08); }
+        body[data-lang="ar"] .stat-item { border-right: none; border-left: 1px solid rgba(74, 47, 168, 0.1); }
+        body[data-lang="ar"] .stat-item:last-child { border-left: none; }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem; font-weight: 700;
+            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px; display: block;
+        }
+        .stat-label {
+            font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--text-grey); font-weight: 600;
+        }
+        body[data-lang="ar"] .stat-label { letter-spacing: 1px; }
+
+        /* --- MISSION --- */
+        .mission-section {
+            padding: 120px 5%; display: grid;
+            grid-template-columns: 1fr 1fr; gap: 80px;
+            max-width: 1300px; margin: 0 auto;
+        }
+        .mission-block h3 {
+            font-size: 3rem; margin-bottom: 25px;
+            color: var(--dark-blue); position: relative; font-weight: 700;
+        }
+        .mission-block h3::after {
+            content: ''; display: block; width: 60px; height: 3px;
+            background: linear-gradient(90deg, var(--violet), var(--cyan)); margin-top: 20px;
+        }
+        body[data-lang="ar"] .mission-block h3::after { margin-left: auto; }
+        .mission-block p { font-size: 1.05rem; color: var(--text-grey); margin-bottom: 20px; font-weight: 400; }
+        .values-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+        .value-tag {
+            background-color: var(--white);
+            border: 1px solid rgba(74, 47, 168, 0.3);
+            color: var(--violet); padding: 10px 22px;
+            border-radius: 50px; font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            transition: var(--transition); font-family: 'Inter', sans-serif;
+        }
+        .value-tag:hover {
+            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            color: var(--white); border-color: transparent;
+            transform: translateY(-3px); box-shadow: 0 10px 20px rgba(74,47,168,0.3);
+        }
+
+        /* --- SERVICES --- */
+        .services-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--violet-dark) 100%);
+            color: #ffffff;
+            padding: 120px 5%; transition: background-color 0.5s ease;
+        }
+        body.dark-mode .services-section { 
+            background: linear-gradient(135deg, #0a0620 0%, #1a0f3d 100%);
+        }
+        .services-header { text-align: center; margin-bottom: 80px; }
+        .services-header h2 { font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; color: #ffffff; }
+        .services-header p { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; font-weight: 300; }
+
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px; max-width: 1300px; margin: 0 auto;
+        }
+        .service-card {
+            position: relative; height: 420px;
+            border-radius: 12px; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 40px 35px;
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            transition: var(--transition); cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .service-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(26, 15, 61, 0.2) 0%, rgba(26, 15, 61, 0.95) 100%);
+            z-index: 1; transition: var(--transition);
+        }
+        .service-card:hover::before {
+            background: linear-gradient(180deg, rgba(74, 47, 168, 0.5) 0%, rgba(26, 15, 61, 0.95) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 180, 255, 0.3);
+            border-color: rgba(0, 180, 255, 0.6);
+        }
+        .service-content { position: relative; z-index: 2; }
+        .service-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; font-weight: 600;
+            color: var(--cyan-light); letter-spacing: 3px;
+            margin-bottom: 15px; display: inline-block;
+            padding-bottom: 10px; border-bottom: 2px solid var(--cyan-light);
+            transition: var(--transition);
+        }
+        .service-card:hover .service-number { color: #ffffff; border-bottom-color: #ffffff; }
+        .service-card h4 { font-size: 2rem; margin-bottom: 12px; font-weight: 700; color: #ffffff; line-height: 1.2; }
+        .service-card p {
+            font-size: 0.9rem; color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6; font-weight: 300;
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.6s ease, margin 0.6s ease;
+        }
+        .service-card:hover p { max-height: 200px; }
+
+        /* --- FAQ --- */
+        .faq-section {
+            padding: 120px 5%;
+            background: var(--white);
+            transition: background-color 0.5s ease;
+        }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-header { text-align: center; margin-bottom: 60px; }
+        .faq-header h2 { font-size: 3.5rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .faq-header p { color: var(--text-grey); font-size: 1.1rem; }
+        .faq-item {
+            border-bottom: 1px solid rgba(74, 47, 168, 0.1);
+            transition: var(--transition);
+        }
+        body.dark-mode .faq-item { border-bottom-color: rgba(255,255,255,0.08); }
+        .faq-question {
+            width: 100%; background: transparent; border: none;
+            padding: 25px 0; text-align: left; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Inter', sans-serif; font-size: 1.05rem;
+            font-weight: 600; color: var(--dark-blue);
+            transition: var(--transition);
+            gap: 20px;
+        }
+        body[data-lang="ar"] .faq-question { text-align: right; }
+        .faq-question:hover { color: var(--violet); }
+        .faq-icon {
+            width: 30px; height: 30px;
+            border: 2px solid var(--violet);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; transition: var(--transition);
+            position: relative;
+        }
+        .faq-icon::before, .faq-icon::after {
+            content: ''; position: absolute;
+            background: var(--violet); transition: var(--transition);
+        }
+        .faq-icon::before { width: 12px; height: 2px; }
+        .faq-icon::after { width: 2px; height: 12px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); background: var(--violet); }
+        .faq-item.open .faq-icon::before, .faq-item.open .faq-icon::after { background: #ffffff; }
+        .faq-item.open .faq-icon::after { opacity: 0; }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-grey); font-size: 0.95rem; line-height: 1.7;
+        }
+        .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 25px; }
+
+        /* --- CONTACT --- */
+        .contact-section {
+            padding: 120px 5%; background: var(--light-bg);
+            transition: background-color 0.5s ease;
+        }
+        .contact-header { text-align: center; margin-bottom: 70px; }
+        .contact-header h2 { font-size: 3.5rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .contact-header p { color: var(--text-grey); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 45px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(74, 47, 168, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(74, 47, 168, 0.08);
+            text-decoration: none;
+            color: var(--dark-blue);
+            display: block;
+        }
+        body.dark-mode .contact-card {
+            background: #1e1545;
+            border-color: rgba(255,255,255,0.05);
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(74, 47, 168, 0.25);
+            border-color: rgba(0, 180, 255, 0.5);
+        }
+
+        .contact-card-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            background: var(--light-bg);
+            transition: var(--transition);
+            padding: 12px;
+        }
+        body.dark-mode .contact-card-image {
+            background: #0a0620;
+        }
+        .contact-card:hover .contact-card-image {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(74, 47, 168, 0.3);
+        }
+        .contact-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--dark-blue);
+        }
+        .contact-card p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .contact-card .contact-value {
+            font-weight: 600;
+            color: var(--violet);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .map-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(74, 47, 168, 0.15);
+            height: 400px;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer { 
+            background: linear-gradient(135deg, #0a0620 0%, #1a0f3d 100%);
+            color: #ffffff; padding: 80px 5% 30px; 
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px; max-width: 1300px; margin: 0 auto 60px;
+        }
+        .footer-brand img { height: 60px; margin-bottom: 20px; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; max-width: 350px; font-weight: 300; }
+        .footer-col h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--cyan);
+            margin-bottom: 25px; font-weight: 700;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none; transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        .footer-col ul li a:hover { color: var(--cyan); padding-left: 5px; }
+        body[data-lang="ar"] .footer-col ul li a:hover { padding-left: 0; padding-right: 5px; }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a img {
+            width: 40px; height: 40px; border-radius: 50%;
+            transition: var(--transition); border: 2px solid transparent;
+            object-fit: cover;
+        }
+        .social-links a img:hover { transform: translateY(-5px); border-color: var(--cyan); }
+        .footer-bottom {
+            text-align: center; padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4); font-size: 0.85rem;
+        }
+
+        /* --- RETOUR EN HAUT --- */
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            color: #ffffff;
+            border: none; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden;
+            transition: var(--transition); z-index: 998;
+            box-shadow: 0 10px 20px rgba(74, 47, 168, 0.3);
+        }
+        .back-to-top svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(74, 47, 168, 0.5); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero-logo { height: 170px; }
+            .hero-tagline { font-size: 0.75rem; letter-spacing: 4px; }
+            .hero-tagline::before, .hero-tagline::after { width: 30px; }
+            .hero-slogan { font-size: 1.4rem; min-width: auto; }
+            .mission-section { grid-template-columns: 1fr; gap: 50px; padding: 80px 5%; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { margin: 0 auto; }
+            .social-links { justify-content: center; }
+            nav { display: none; }
+            .hero { background-attachment: scroll; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(74, 47, 168, 0.1); }
+            .stat-item:last-child { border-bottom: none; }
+            body[data-lang="ar"] .stat-item { border-left: none; border-bottom: 1px solid rgba(74, 47, 168, 0.1); }
+            .service-card { height: 380px; }
+            .service-card p { max-height: 200px; }
+            .sparkle { display: none; }
+        }
+        @media (max-width: 768px) {
+            .hero-logo { height: 130px; }
+            .hero-tagline { font-size: 0.65rem; letter-spacing: 3px; gap: 10px; }
+            .hero-tagline::before, .hero-tagline::after { width: 20px; }
+            .hero-slogan { font-size: 1.1rem; padding: 20px 0; }
+            .services-header h2, .faq-header h2, .contact-header h2 { font-size: 2.5rem; }
+            .mission-block h3 { font-size: 2rem; }
+            .service-card { height: 320px; padding: 30px 25px; }
+            .service-card h4 { font-size: 1.6rem; }
+            .map-wrapper { height: 300px; }
+            .lang-panel-header h3 { font-size: 1.4rem; }
+            .lang-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- SÉLECTEUR DE LANGUE -->
+    <div class="lang-panel-overlay" id="langOverlay"></div>
+    <div class="lang-panel" id="langPanel">
+        <div class="lang-panel-header">
+            <h3 data-i18n="lang_panel_title">Choisissez votre langue</h3>
+            <button class="lang-close" id="langClose" aria-label="Fermer">✕</button>
+        </div>
+        <div class="lang-grid" id="langGrid">
+            <button class="lang-option" data-lang="fr">
+                <span class="flag">🇫🇷</span>
+                <span class="lang-info">
+                    <span class="lang-name">Français</span>
+                    <span class="lang-native">Français</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="en">
+                <span class="flag">🇬🇧</span>
+                <span class="lang-info">
+                    <span class="lang-name">English</span>
+                    <span class="lang-native">English</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="es">
+                <span class="flag">🇪🇸</span>
+                <span class="lang-info">
+                    <span class="lang-name">Español</span>
+                    <span class="lang-native">Español</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="pt">
+                <span class="flag">🇵🇹</span>
+                <span class="lang-info">
+                    <span class="lang-name">Português</span>
+                    <span class="lang-native">Português</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="it">
+                <span class="flag">🇮🇹</span>
+                <span class="lang-info">
+                    <span class="lang-name">Italiano</span>
+                    <span class="lang-native">Italiano</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="de">
+                <span class="flag">🇩🇪</span>
+                <span class="lang-info">
+                    <span class="lang-name">Deutsch</span>
+                    <span class="lang-native">Deutsch</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="zh">
+                <span class="flag">🇨🇳</span>
+                <span class="lang-info">
+                    <span class="lang-name">中文</span>
+                    <span class="lang-native">简体中文</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="ja">
+                <span class="flag">🇯🇵</span>
+                <span class="lang-info">
+                    <span class="lang-name">日本語</span>
+                    <span class="lang-native">日本語</span>
+                </span>
+            </button>
+            <button class="lang-option" data-lang="ar">
+                <span class="flag">🇸🇦</span>
+                <span class="lang-info">
+                    <span class="lang-name">العربية</span>
+                    <span class="lang-native">العربية</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- EN-TÊTE -->
+    <header id="header">
+        <div class="logo-container">
+            <img src="logo-zm.png" alt="PolariXe Logo">
+        </div>
+        <nav>
+            <a href="#mission" data-i18n="nav_mission">Notre Mission</a>
+            <a href="#services" data-i18n="nav_services">Nos Services</a>
+            <a href="#faq" data-i18n="nav_faq">FAQ</a>
+            <a href="#contact-section" data-i18n="nav_contact">Contact</a>
+        </nav>
+        <div class="controls">
+            <button class="control-btn" id="themeToggle" title="Changer le thème">
+                <svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="control-btn lang-btn" id="langToggle" title="Changer la langue">
+                <span class="flag" id="currentFlag">🇫🇷</span>
+                <span id="currentLangCode">FR</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="logo-zm.png" alt="PolariXe" class="hero-logo">
+            <p class="hero-tagline" data-i18n="hero_tagline">Agence de Communication Digitale</p>
+            <div class="hero-slogan">
+                <span id="typedText"></span><span class="typing-cursor"></span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary" data-i18n="hero_btn">Découvrir nos services</a>
+                <a href="#contact-section" class="btn-outline" data-i18n="hero_btn2">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHIFFRES CLÉS -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <span class="stat-number" data-count="15">0</span>
+                <span class="stat-label" data-i18n="stat1">Clients accompagnés</span>
+            </div>
+            <div class="stat-item reveal">
+                <span class="stat-number" data-count="200">0</span>
+                <span class="stat-label" data-i18n="stat2">Publications créées</span>
+            </div>
+            <div class="stat-item reveal">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label" data-i18n="stat3">Établissements scolaires</span>
+            </div>
+            <div class="stat-item reveal">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label" data-i18n="stat4">% de satisfaction</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission-section" id="mission">
+        <div class="mission-block reveal">
+            <h3 data-i18n="mission_title">Notre Mission</h3>
+            <p data-i18n="mission_text1">Permettre à nos clients de construire une présence digitale professionnelle, cohérente, attractive et orientée vers des résultats concrets, sans devoir mobiliser eux-mêmes du temps ou des compétences spécialisées.</p>
+            <p data-i18n="mission_text2">Nous croyons en une communication de proximité, adaptée aux réalités du marché camerounais, alliant créativité et performance.</p>
+        </div>
+        <div class="mission-block reveal">
+            <h3 data-i18n="vision_title">Notre Vision</h3>
+            <p data-i18n="vision_text">Faire de PolariXe une agence de référence à Yaoundé dans l'accompagnement digital des structures locales, en combinant proximité, créativité, régularité et compréhension des réalités du marché.</p>
+            <div class="values-grid">
+                <span class="value-tag" data-i18n="val1">Proximité</span>
+                <span class="value-tag" data-i18n="val2">Professionnalisme</span>
+                <span class="value-tag" data-i18n="val3">Créativité</span>
+                <span class="value-tag" data-i18n="val4">Performance</span>
+                <span class="value-tag" data-i18n="val5">Progressivité</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+        <div class="services-header reveal">
+            <h2 data-i18n="services_title">Nos Services</h2>
+            <p data-i18n="services_subtitle">Des solutions complètes pour propulser votre image et atteindre vos objectifs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal" style="background-image: url('service1.jpg');">
+                <div class="service-content">
+                    <span class="service-number">01</span>
+                    <h4 data-i18n="srv1_title">Gestion des réseaux sociaux</h4>
+                    <p data-i18n="srv1_text">Animation de vos communautés sur Instagram, Facebook et TikTok. Réponses aux messages, veille concurrentielle et reporting mensuel.</p>
+                </div>
+            </div>
+            <div class="service-card reveal" style="background-image: url('service2.jpg');">
+                <div class="service-content">
+                    <span class="service-number">02</span>
+                    <h4 data-i18n="srv2_title">Création de contenu</h4>
+                    <p data-i18n="srv2_text">Conception graphique, rédaction de textes percutants et élaboration de calendriers éditoriaux adaptés à votre identité de marque.</p>
+                </div>
+            </div>
+            <div class="service-card reveal" style="background-image: url('service3.jpg');">
+                <div class="service-content">
+                    <span class="service-number">03</span>
+                    <h4 data-i18n="srv3_title">Photo & Vidéo</h4>
+                    <p data-i18n="srv3_text">Couverture professionnelle de vos événements, shootings corporate et montage vidéo pour dynamiser votre communication visuelle.</p>
+                </div>
+            </div>
+            <div class="service-card reveal" style="background-image: url('service4.jpg');">
+                <div class="service-content">
+                    <span class="service-number">04</span>
+                    <h4 data-i18n="srv4_title">Publicité digitale</h4>
+                    <p data-i18n="srv4_text">Gestion de campagnes publicitaires ciblées sur les réseaux sociaux pour augmenter votre visibilité et attirer des prospects qualifiés.</p>
+                </div>
+            </div>
+            <div class="service-card reveal" style="background-image: url('service5.jpg');">
+                <div class="service-content">
+                    <span class="service-number">05</span>
+                    <h4 data-i18n="srv5_title">Communication institutionnelle</h4>
+                    <p data-i18n="srv5_text">Accompagnement des établissements scolaires et structures pour valoriser leurs activités et faciliter l'information auprès des parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-header reveal">
+                <h2 data-i18n="faq_title">Questions fréquentes</h2>
+                <p data-i18n="faq_subtitle">Tout ce que vous devez savoir avant de collaborer avec nous.</p>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q1">Combien de temps avant de voir des résultats concrets ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a1">Les premiers effets sur la visibilité apparaissent généralement dès le premier mois (augmentation des vues et de l'engagement). Les résultats significatifs sur la notoriété et les conversions se mesurent sur 3 à 6 mois, selon la régularité et les objectifs définis ensemble.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q2">Travaillez-vous avec des budgets serrés ou des petites structures ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a2">Oui, absolument. Nous adaptons nos prestations à la taille et au budget de chaque structure. Nous proposons des formules progressives pour permettre de démarrer petit et d'évoluer au rythme de votre activité.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q3">Comment se passe la collaboration à distance ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a3">Nous travaillons principalement via WhatsApp, email et Google Drive. Un interlocuteur unique est dédié à chaque client. Pour les besoins photo/vidéo, nous pouvons nous déplacer sur Yaoundé et ses environs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q4">Proposez-vous des offres spéciales pour les écoles ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a4">Oui. Nous avons un Pack Établissement conçu spécialement pour les collèges et lycées, avec un tarif adapté et un accompagnement sur le calendrier scolaire (rentrée, événements, remises de prix, communication avec les parents).</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q5">Qui rédige les textes et crée les visuels ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a5">Tout est fait par notre équipe : rédaction, conception graphique, photographie et montage vidéo. Vous n'avez rien à préparer, sauf valider les contenus avant publication si vous le souhaitez.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <span data-i18n="faq_q6">Puis-je arrêter quand je veux ?</span>
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a6">Oui. Nos formules mensuelles sont sans engagement de longue durée. Nous croyons qu'un client satisfait reste naturellement. Vous pouvez arrêter à la fin de n'importe quel mois, avec un préavis de 15 jours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact-section">
+        <div class="contact-header reveal">
+            <h2 data-i18n="contact_title">Parlons de votre projet</h2>
+            <p data-i18n="contact_subtitle">Choisissez le canal qui vous convient le mieux. Nous répondons généralement en moins de 2 heures.</p>
+        </div>
+
+        <div class="contact-cards">
+            <a href="https://wa.me/237693035145?text=Bonjour%20PolariXe%2C%20je%20souhaite%20discuter%20d%27un%20projet." 
+               target="_blank" rel="noopener" class="contact-card reveal">
+                <div class="contact-card-image">
+                    <img src="whatsapp-icon.png" alt="WhatsApp">
+                </div>
+                <h3>WhatsApp</h3>
+                <p data-i18n="contact_whatsapp_desc">Le moyen le plus rapide de nous joindre</p>
+                <span class="contact-value">+237 693 035 145</span>
+            </a>
+
+            <a href="mailto:contact@polarixe.cm?subject=Demande%20d%27information" class="contact-card reveal">
+                <div class="contact-card-image">
+                    <img src="email-icon.png" alt="Email">
+                </div>
+                <h3>Email</h3>
+                <p data-i18n="contact_email_desc">Pour les demandes détaillées et les devis</p>
+                <span class="contact-value">contact@polarixe.cm</span>
+            </a>
+
+            <a href="https://maps.google.com/?q=Yaoundé,Cameroun" target="_blank" rel="noopener" class="contact-card reveal">
+                <div class="contact-card-image">
+                    <img src="location-icon.png" alt="Localisation">
+                </div>
+                <h3 data-i18n="contact_location_title">Localisation</h3>
+                <p data-i18n="contact_location_desc">Notre base d'opérations</p>
+                <span class="contact-value" data-i18n="footer_location">Yaoundé, Cameroun</span>
+            </a>
+        </div>
+
+        <div class="map-wrapper reveal">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127456.57611041862!2d11.4463883!3d3.8480713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x9a1c2b1e6c48b5!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1700000000000!5m2!1sfr!2scm" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand reveal">
+                <img src="logo-zm.png" alt="PolariXe">
+                <p data-i18n="footer_desc">Agence de communication digitale basée à Yaoundé, Cameroun. Nous donnons de la visibilité à votre image.</p>
+            </div>
+            <div class="footer-col reveal">
+                <h4 data-i18n="footer_contact">Contact</h4>
+                <ul>
+                    <li><a href="tel:+237693035145">+237 693 035 145</a></li>
+                    <li><a href="mailto:contact@polarixe.cm">contact@polarixe.cm</a></li>
+                    <li data-i18n="footer_location">Yaoundé, Cameroun</li>
+                </ul>
+            </div>
+            <div class="footer-col reveal">
+                <h4 data-i18n="footer_follow">Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+                    <a href="https://wa.me/237693035145" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolariXe. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="backToTop" title="Retour en haut">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+        // ==========================================
+        // TRADUCTIONS (9 LANGUES)
+        // ==========================================
+        const translations = {
+            fr: {
+                lang_panel_title: "Choisissez votre langue",
+                nav_mission: "Notre Mission", nav_services: "Nos Services", nav_contact: "Contact", nav_faq: "FAQ",
+                hero_tagline: "Agence de Communication Digitale",
+                hero_slogan: "« Votre image mérite de rayonner. Nous la faisons grandir. »",
+                hero_btn: "Découvrir nos services", hero_btn2: "Nous contacter",
+                stat1: "Clients accompagnés", stat2: "Publications créées", stat3: "Établissements scolaires", stat4: "% de satisfaction",
+                mission_title: "Notre Mission",
+                mission_text1: "Permettre à nos clients de construire une présence digitale professionnelle, cohérente, attractive et orientée vers des résultats concrets, sans devoir mobiliser eux-mêmes du temps ou des compétences spécialisées.",
+                mission_text2: "Nous croyons en une communication de proximité, adaptée aux réalités du marché camerounais, alliant créativité et performance.",
+                vision_title: "Notre Vision",
+                vision_text: "Faire de PolariXe une agence de référence à Yaoundé dans l'accompagnement digital des structures locales, en combinant proximité, créativité, régularité et compréhension des réalités du marché.",
+                val1: "Proximité", val2: "Professionnalisme", val3: "Créativité", val4: "Performance", val5: "Progressivité",
+                services_title: "Nos Services",
+                services_subtitle: "Des solutions complètes pour propulser votre image et atteindre vos objectifs.",
+                srv1_title: "Gestion des réseaux sociaux", srv1_text: "Animation de vos communautés sur Instagram, Facebook et TikTok. Réponses aux messages, veille concurrentielle et reporting mensuel.",
+                srv2_title: "Création de contenu", srv2_text: "Conception graphique, rédaction de textes percutants et élaboration de calendriers éditoriaux adaptés à votre identité de marque.",
+                srv3_title: "Photo & Vidéo", srv3_text: "Couverture professionnelle de vos événements, shootings corporate et montage vidéo pour dynamiser votre communication visuelle.",
+                srv4_title: "Publicité digitale", srv4_text: "Gestion de campagnes publicitaires ciblées sur les réseaux sociaux pour augmenter votre visibilité et attirer des prospects qualifiés.",
+                srv5_title: "Communication institutionnelle", srv5_text: "Accompagnement des établissements scolaires et structures pour valoriser leurs activités et faciliter l'information auprès des parents.",
+                faq_title: "Questions fréquentes", faq_subtitle: "Tout ce que vous devez savoir avant de collaborer avec nous.",
+                faq_q1: "Combien de temps avant de voir des résultats concrets ?",
+                faq_a1: "Les premiers effets sur la visibilité apparaissent généralement dès le premier mois. Les résultats significatifs se mesurent sur 3 à 6 mois, selon la régularité et les objectifs.",
+                faq_q2: "Travaillez-vous avec des budgets serrés ou des petites structures ?",
+                faq_a2: "Oui, absolument. Nous adaptons nos prestations à la taille et au budget de chaque structure. Nous proposons des formules progressives.",
+                faq_q3: "Comment se passe la collaboration à distance ?",
+                faq_a3: "Nous travaillons principalement via WhatsApp, email et Google Drive. Un interlocuteur unique est dédié à chaque client.",
+                faq_q4: "Proposez-vous des offres spéciales pour les écoles ?",
+                faq_a4: "Oui. Nous avons un Pack Établissement conçu spécialement pour les collèges et lycées, avec un tarif adapté et un accompagnement sur le calendrier scolaire.",
+                faq_q5: "Qui rédige les textes et crée les visuels ?",
+                faq_a5: "Tout est fait par notre équipe : rédaction, conception graphique, photographie et montage vidéo.",
+                faq_q6: "Puis-je arrêter quand je veux ?",
+                faq_a6: "Oui. Nos formules mensuelles sont sans engagement de longue durée. Vous pouvez arrêter à la fin de n'importe quel mois, avec un préavis de 15 jours.",
+                contact_title: "Parlons de votre projet",
+                contact_subtitle: "Choisissez le canal qui vous convient le mieux. Nous répondons généralement en moins de 2 heures.",
+                contact_whatsapp_desc: "Le moyen le plus rapide de nous joindre",
+                contact_email_desc: "Pour les demandes détaillées et les devis",
+                contact_location_title: "Localisation",
+                contact_location_desc: "Notre base d'opérations",
+                footer_desc: "Agence de communication digitale basée à Yaoundé, Cameroun. Nous donnons de la visibilité à votre image.",
+                footer_contact: "Contact", footer_location: "Yaoundé, Cameroun", footer_follow: "Suivez-nous", footer_rights: "Tous droits réservés."
+            },
+            en: {
+                lang_panel_title: "Choose your language",
+                nav_mission: "Our Mission", nav_services: "Our Services", nav_contact: "Contact", nav_faq: "FAQ",
+                hero_tagline: "Digital Communication Agency",
+                hero_slogan: "« Your image deserves to shine. We make it grow. »",
+                hero_btn: "Discover our services", hero_btn2: "Contact us",
+                stat1: "Clients supported", stat2: "Posts created", stat3: "Schools supported", stat4: "% satisfaction",
+                mission_title: "Our Mission",
+                mission_text1: "Enable our clients to build a professional, consistent, attractive digital presence oriented towards concrete results, without having to mobilize time or specialized skills themselves.",
+                mission_text2: "We believe in local communication, adapted to the realities of the Cameroonian market, combining creativity and performance.",
+                vision_title: "Our Vision",
+                vision_text: "To make PolariXe a reference agency in Yaoundé for the digital support of local structures, combining proximity, creativity, regularity and understanding of market realities.",
+                val1: "Proximity", val2: "Professionalism", val3: "Creativity", val4: "Performance", val5: "Progressiveness",
+                services_title: "Our Services",
+                services_subtitle: "Complete solutions to boost your image and achieve your goals.",
+                srv1_title: "Social Media Management", srv1_text: "Animation of your communities on Instagram, Facebook and TikTok. Message responses, competitive intelligence and monthly reporting.",
+                srv2_title: "Content Creation", srv2_text: "Graphic design, writing impactful texts and developing editorial calendars adapted to your brand identity.",
+                srv3_title: "Photo & Video", srv3_text: "Professional coverage of your events, corporate shoots and video editing to boost your visual communication.",
+                srv4_title: "Digital Advertising", srv4_text: "Management of targeted advertising campaigns on social networks to increase your visibility and attract qualified prospects.",
+                srv5_title: "Institutional Communication", srv5_text: "Support for schools and structures to promote their activities and facilitate information for parents.",
+                faq_title: "Frequently asked questions", faq_subtitle: "Everything you need to know before working with us.",
+                faq_q1: "How long before seeing concrete results?",
+                faq_a1: "The first effects on visibility usually appear within the first month. Significant results are measured over 3 to 6 months, depending on regularity and objectives.",
+                faq_q2: "Do you work with tight budgets or small structures?",
+                faq_a2: "Yes, absolutely. We adapt our services to the size and budget of each structure. We offer progressive packages.",
+                faq_q3: "How does remote collaboration work?",
+                faq_a3: "We work mainly via WhatsApp, email and Google Drive. A single contact person is dedicated to each client.",
+                faq_q4: "Do you offer special packages for schools?",
+                faq_a4: "Yes. We have a School Package specially designed for middle and high schools, with an adapted rate and support aligned with the school calendar.",
+                faq_q5: "Who writes the texts and creates the visuals?",
+                faq_a5: "Everything is done by our team: writing, graphic design, photography and video editing.",
+                faq_q6: "Can I stop whenever I want?",
+                faq_a6: "Yes. Our monthly packages have no long-term commitment. You can stop at the end of any month, with 15 days' notice.",
+                contact_title: "Let's talk about your project",
+                contact_subtitle: "Choose the channel that suits you best. We usually respond in less than 2 hours.",
+                contact_whatsapp_desc: "The fastest way to reach us",
+                contact_email_desc: "For detailed requests and quotes",
+                contact_location_title: "Location",
+                contact_location_desc: "Our base of operations",
+                footer_desc: "Digital communication agency based in Yaoundé, Cameroon. We give visibility to your image.",
+                footer_contact: "Contact", footer_location: "Yaoundé, Cameroon", footer_follow: "Follow us", footer_rights: "All rights reserved."
+            },
+            es: {
+                lang_panel_title: "Elige tu idioma",
+                nav_mission: "Nuestra Misión", nav_services: "Nuestros Servicios", nav_contact: "Contacto", nav_faq: "FAQ",
+                hero_tagline: "Agencia de Comunicación Digital",
+                hero_slogan: "« Tu imagen merece brillar. La hacemos crecer. »",
+                hero_btn: "Descubrir nuestros servicios", hero_btn2: "Contáctanos",
+                stat1: "Clientes acompañados", stat2: "Publicaciones creadas", stat3: "Centros escolares", stat4: "% de satisfacción",
+                mission_title: "Nuestra Misión",
+                mission_text1: "Permitir a nuestros clientes construir una presencia digital profesional, coherente, atractiva y orientada a resultados concretos, sin tener que movilizar ellos mismos tiempo o competencias especializadas.",
+                mission_text2: "Creemos en una comunicación de proximidad, adaptada a las realidades del mercado camerunés, combinando creatividad y rendimiento.",
+                vision_title: "Nuestra Visión",
+                vision_text: "Hacer de PolariXe una agencia de referencia en Yaundé en el acompañamiento digital de las estructuras locales, combinando proximidad, creatividad, regularidad y comprensión del mercado.",
+                val1: "Proximidad", val2: "Profesionalismo", val3: "Creatividad", val4: "Rendimiento", val5: "Progresividad",
+                services_title: "Nuestros Servicios",
+                services_subtitle: "Soluciones completas para impulsar tu imagen y alcanzar tus objetivos.",
+                srv1_title: "Gestión de redes sociales", srv1_text: "Animación de tus comunidades en Instagram, Facebook y TikTok. Respuestas a mensajes, vigilancia competitiva e informes mensuales.",
+                srv2_title: "Creación de contenido", srv2_text: "Diseño gráfico, redacción de textos impactantes y elaboración de calendarios editoriales adaptados a tu identidad de marca.",
+                srv3_title: "Foto y Vídeo", srv3_text: "Cobertura profesional de tus eventos, sesiones corporativas y montaje de vídeo para dinamizar tu comunicación visual.",
+                srv4_title: "Publicidad digital", srv4_text: "Gestión de campañas publicitarias dirigidas en redes sociales para aumentar tu visibilidad y atraer clientes potenciales.",
+                srv5_title: "Comunicación institucional", srv5_text: "Acompañamiento a centros escolares y estructuras para valorizar sus actividades y facilitar la información a los padres.",
+                faq_title: "Preguntas frecuentes", faq_subtitle: "Todo lo que necesitas saber antes de colaborar con nosotros.",
+                faq_q1: "¿Cuánto tiempo antes de ver resultados concretos?",
+                faq_a1: "Los primeros efectos sobre la visibilidad suelen aparecer desde el primer mes. Los resultados significativos se miden entre 3 y 6 meses.",
+                faq_q2: "¿Trabajan con presupuestos ajustados o estructuras pequeñas?",
+                faq_a2: "Sí, por supuesto. Adaptamos nuestros servicios al tamaño y presupuesto de cada estructura. Ofrecemos fórmulas progresivas.",
+                faq_q3: "¿Cómo funciona la colaboración a distancia?",
+                faq_a3: "Trabajamos principalmente por WhatsApp, email y Google Drive. Un interlocutor único está dedicado a cada cliente.",
+                faq_q4: "¿Ofrecen ofertas especiales para escuelas?",
+                faq_a4: "Sí. Tenemos un Paquete Escuela diseñado especialmente para colegios y liceos, con tarifa adaptada y acompañamiento en el calendario escolar.",
+                faq_q5: "¿Quién redacta los textos y crea los visuales?",
+                faq_a5: "Todo lo hace nuestro equipo: redacción, diseño gráfico, fotografía y montaje de vídeo.",
+                faq_q6: "¿Puedo parar cuando quiera?",
+                faq_a6: "Sí. Nuestras fórmulas mensuales no tienen compromiso de larga duración. Puedes parar al final de cualquier mes, con 15 días de aviso.",
+                contact_title: "Hablemos de tu proyecto",
+                contact_subtitle: "Elige el canal que más te convenga. Solemos responder en menos de 2 horas.",
+                contact_whatsapp_desc: "La forma más rápida de contactarnos",
+                contact_email_desc: "Para solicitudes detalladas y presupuestos",
+                contact_location_title: "Ubicación",
+                contact_location_desc: "Nuestra base de operaciones",
+                footer_desc: "Agencia de comunicación digital con sede en Yaundé, Camerún. Damos visibilidad a tu imagen.",
+                footer_contact: "Contacto", footer_location: "Yaundé, Camerún", footer_follow: "Síguenos", footer_rights: "Todos los derechos reservados."
+            },
+            pt: {
+                lang_panel_title: "Escolha o seu idioma",
+                nav_mission: "Nossa Missão", nav_services: "Nossos Serviços", nav_contact: "Contacto", nav_faq: "FAQ",
+                hero_tagline: "Agência de Comunicação Digital",
+                hero_slogan: "« A sua imagem merece brilhar. Nós fazemo-la crescer. »",
+                hero_btn: "Descobrir os nossos serviços", hero_btn2: "Contacte-nos",
+                stat1: "Clientes acompanhados", stat2: "Publicações criadas", stat3: "Estabelecimentos escolares", stat4: "% de satisfação",
+                mission_title: "Nossa Missão",
+                mission_text1: "Permitir aos nossos clientes construir uma presença digital profissional, coerente, atrativa e orientada para resultados concretos, sem terem de mobilizar tempo ou competências especializadas.",
+                mission_text2: "Acreditamos numa comunicação de proximidade, adaptada às realidades do mercado camaronês, combinando criatividade e desempenho.",
+                vision_title: "Nossa Visão",
+                vision_text: "Fazer da PolariXe uma agência de referência em Yaoundé no acompanhamento digital das estruturas locais, combinando proximidade, criatividade, regularidade e compreensão do mercado.",
+                val1: "Proximidade", val2: "Profissionalismo", val3: "Criatividade", val4: "Desempenho", val5: "Progressividade",
+                services_title: "Nossos Serviços",
+                services_subtitle: "Soluções completas para impulsionar a sua imagem e atingir os seus objetivos.",
+                srv1_title: "Gestão de redes sociais", srv1_text: "Animação das suas comunidades no Instagram, Facebook e TikTok. Respostas a mensagens, monitorização da concorrência e relatórios mensais.",
+                srv2_title: "Criação de conteúdo", srv2_text: "Design gráfico, redação de textos impactantes e elaboração de calendários editoriais adaptados à sua identidade de marca.",
+                srv3_title: "Foto e Vídeo", srv3_text: "Cobertura profissional dos seus eventos, sessões corporativas e montagem de vídeo para dinamizar a sua comunicação visual.",
+                srv4_title: "Publicidade digital", srv4_text: "Gestão de campanhas publicitárias segmentadas nas redes sociais para aumentar a sua visibilidade e atrair clientes potenciais.",
+                srv5_title: "Comunicação institucional", srv5_text: "Acompanhamento de estabelecimentos escolares e estruturas para valorizar as suas atividades e facilitar a informação aos pais.",
+                faq_title: "Perguntas frequentes", faq_subtitle: "Tudo o que precisa de saber antes de colaborar connosco.",
+                faq_q1: "Quanto tempo antes de ver resultados concretos?",
+                faq_a1: "Os primeiros efeitos na visibilidade aparecem geralmente a partir do primeiro mês. Os resultados significativos medem-se entre 3 a 6 meses.",
+                faq_q2: "Trabalham com orçamentos apertados ou pequenas estruturas?",
+                faq_a2: "Sim, absolutamente. Adaptamos os nossos serviços ao tamanho e orçamento de cada estrutura. Oferecemos fórmulas progressivas.",
+                faq_q3: "Como funciona a colaboração à distância?",
+                faq_a3: "Trabalhamos principalmente via WhatsApp, email e Google Drive. Um interlocutor único está dedicado a cada cliente.",
+                faq_q4: "Oferecem ofertas especiais para escolas?",
+                faq_a4: "Sim. Temos um Pacote Escola concebido especialmente para colégios e liceus, com tarifa adaptada e acompanhamento no calendário escolar.",
+                faq_q5: "Quem escreve os textos e cria os visuais?",
+                faq_a5: "Tudo é feito pela nossa equipa: redação, design gráfico, fotografia e montagem de vídeo.",
+                faq_q6: "Posso parar quando quiser?",
+                faq_a6: "Sim. As nossas fórmulas mensais não têm compromisso de longa duração. Pode parar no final de qualquer mês, com 15 dias de aviso.",
+                contact_title: "Vamos falar do seu projeto",
+                contact_subtitle: "Escolha o canal que mais lhe convém. Respondemos geralmente em menos de 2 horas.",
+                contact_whatsapp_desc: "A forma mais rápida de nos contactar",
+                contact_email_desc: "Para pedidos detalhados e orçamentos",
+                contact_location_title: "Localização",
+                contact_location_desc: "A nossa base de operações",
+                footer_desc: "Agência de comunicação digital sediada em Yaoundé, Camarões. Damos visibilidade à sua imagem.",
+                footer_contact: "Contacto", footer_location: "Yaoundé, Camarões", footer_follow: "Siga-nos", footer_rights: "Todos os direitos reservados."
+            },
+            it: {
+                lang_panel_title: "Scegli la tua lingua",
+                nav_mission: "La Nostra Missione", nav_services: "I Nostri Servizi", nav_contact: "Contatti", nav_faq: "FAQ",
+                hero_tagline: "Agenzia di Comunicazione Digitale",
+                hero_slogan: "« La tua immagine merita di brillare. La facciamo crescere. »",
+                hero_btn: "Scopri i nostri servizi", hero_btn2: "Contattaci",
+                stat1: "Clienti accompagnati", stat2: "Pubblicazioni create", stat3: "Istituti scolastici", stat4: "% di soddisfazione",
+                mission_title: "La Nostra Missione",
+                mission_text1: "Permettere ai nostri clienti di costruire una presenza digitale professionale, coerente, attraente e orientata a risultati concreti, senza dover mobilitare tempo o competenze specializzate.",
+                mission_text2: "Crediamo in una comunicazione di prossimità, adattata alle realtà del mercato camerunese, che unisce creatività e performance.",
+                vision_title: "La Nostra Visione",
+                vision_text: "Rendere PolariXe un'agenzia di riferimento a Yaoundé nell'accompagnamento digitale delle strutture locali, combinando prossimità, creatività, regolarità e comprensione del mercato.",
+                val1: "Prossimità", val2: "Professionalità", val3: "Creatività", val4: "Performance", val5: "Progressività",
+                services_title: "I Nostri Servizi",
+                services_subtitle: "Soluzioni complete per dare impulso alla tua immagine e raggiungere i tuoi obiettivi.",
+                srv1_title: "Gestione dei social network", srv1_text: "Animazione delle tue community su Instagram, Facebook e TikTok. Risposte ai messaggi, monitoraggio della concorrenza e report mensili.",
+                srv2_title: "Creazione di contenuti", srv2_text: "Design grafico, scrittura di testi incisivi ed elaborazione di calendari editoriali adattati alla tua identità di marca.",
+                srv3_title: "Foto e Video", srv3_text: "Copertura professionale dei tuoi eventi, shooting aziendali e montaggio video per dinamizzare la tua comunicazione visiva.",
+                srv4_title: "Pubblicità digitale", srv4_text: "Gestione di campagne pubblicitarie mirate sui social network per aumentare la tua visibilità e attirare clienti potenziali.",
+                srv5_title: "Comunicazione istituzionale", srv5_text: "Accompagnamento di istituti scolastici e strutture per valorizzare le loro attività e facilitare l'informazione ai genitori.",
+                faq_title: "Domande frequenti", faq_subtitle: "Tutto ciò che devi sapere prima di collaborare con noi.",
+                faq_q1: "Quanto tempo prima di vedere risultati concreti?",
+                faq_a1: "I primi effetti sulla visibilità appaiono generalmente dal primo mese. I risultati significativi si misurano tra 3 e 6 mesi.",
+                faq_q2: "Lavorate con budget limitati o piccole strutture?",
+                faq_a2: "Sì, assolutamente. Adattiamo i nostri servizi alle dimensioni e al budget di ogni struttura. Offriamo formule progressive.",
+                faq_q3: "Come funziona la collaborazione a distanza?",
+                faq_a3: "Lavoriamo principalmente tramite WhatsApp, email e Google Drive. Un unico referente è dedicato a ogni cliente.",
+                faq_q4: "Offrite pacchetti speciali per le scuole?",
+                faq_a4: "Sì. Abbiamo un Pacchetto Scuola pensato per medie e licei, con tariffa adattata e supporto sul calendario scolastico.",
+                faq_q5: "Chi scrive i testi e crea i visual?",
+                faq_a5: "Tutto è fatto dal nostro team: scrittura, design grafico, fotografia e montaggio video.",
+                faq_q6: "Posso fermarmi quando voglio?",
+                faq_a6: "Sì. Le nostre formule mensili non hanno vincoli di lunga durata. Puoi fermarti alla fine di qualsiasi mese, con 15 giorni di preavviso.",
+                contact_title: "Parliamo del tuo progetto",
+                contact_subtitle: "Scegli il canale che preferisci. Rispondiamo generalmente in meno di 2 ore.",
+                contact_whatsapp_desc: "Il modo più rapido per contattarci",
+                contact_email_desc: "Per richieste dettagliate e preventivi",
+                contact_location_title: "Posizione",
+                contact_location_desc: "La nostra base operativa",
+                footer_desc: "Agenzia di comunicazione digitale con sede a Yaoundé, Camerun. Diamo visibilità alla tua immagine.",
+                footer_contact: "Contatti", footer_location: "Yaoundé, Camerun", footer_follow: "Seguici", footer_rights: "Tutti i diritti riservati."
+            },
+            de: {
+                lang_panel_title: "Wählen Sie Ihre Sprache",
+                nav_mission: "Unsere Mission", nav_services: "Unsere Leistungen", nav_contact: "Kontakt", nav_faq: "FAQ",
+                hero_tagline: "Agentur für Digitale Kommunikation",
+                hero_slogan: "« Ihr Image verdient es zu strahlen. Wir lassen es wachsen. »",
+                hero_btn: "Unsere Leistungen entdecken", hero_btn2: "Kontaktieren Sie uns",
+                stat1: "Betreute Kunden", stat2: "Erstellte Beiträge", stat3: "Bildungseinrichtungen", stat4: "% Zufriedenheit",
+                mission_title: "Unsere Mission",
+                mission_text1: "Wir ermöglichen unseren Kunden den Aufbau einer professionellen, kohärenten und attraktiven digitalen Präsenz mit konkreten Ergebnissen, ohne selbst Zeit oder spezialisierte Kompetenzen aufbringen zu müssen.",
+                mission_text2: "Wir glauben an eine nahe Kommunikation, angepasst an die Realitäten des kamerunischen Marktes, die Kreativität und Leistung vereint.",
+                vision_title: "Unsere Vision",
+                vision_text: "PolariXe zu einer Referenzagentur in Yaoundé für die digitale Begleitung lokaler Strukturen zu machen, indem wir Nähe, Kreativität, Regelmäßigkeit und Marktverständnis verbinden.",
+                val1: "Nähe", val2: "Professionalität", val3: "Kreativität", val4: "Leistung", val5: "Fortschrittlichkeit",
+                services_title: "Unsere Leistungen",
+                services_subtitle: "Komplettlösungen, um Ihr Image zu stärken und Ihre Ziele zu erreichen.",
+                srv1_title: "Social-Media-Management", srv1_text: "Betreuung Ihrer Communities auf Instagram, Facebook und TikTok. Beantwortung von Nachrichten, Wettbewerbsanalyse und monatliches Reporting.",
+                srv2_title: "Content-Erstellung", srv2_text: "Grafikdesign, Verfassen wirkungsvoller Texte und Erstellung redaktioneller Kalender, passend zu Ihrer Markenidentität.",
+                srv3_title: "Foto & Video", srv3_text: "Professionelle Begleitung Ihrer Veranstaltungen, Unternehmensshootings und Videobearbeitung zur Stärkung Ihrer visuellen Kommunikation.",
+                srv4_title: "Digitale Werbung", srv4_text: "Verwaltung gezielter Werbekampagnen in sozialen Netzwerken, um Ihre Sichtbarkeit zu erhöhen und qualifizierte Interessenten zu gewinnen.",
+                srv5_title: "Institutionelle Kommunikation", srv5_text: "Begleitung von Schulen und Einrichtungen zur Aufwertung ihrer Aktivitäten und zur Erleichterung der Information für Eltern.",
+                faq_title: "Häufig gestellte Fragen", faq_subtitle: "Alles, was Sie vor einer Zusammenarbeit mit uns wissen müssen.",
+                faq_q1: "Wie lange dauert es, bis konkrete Ergebnisse sichtbar sind?",
+                faq_a1: "Die ersten Effekte auf die Sichtbarkeit zeigen sich in der Regel bereits im ersten Monat. Bedeutende Ergebnisse werden über 3 bis 6 Monate gemessen.",
+                faq_q2: "Arbeiten Sie mit knappen Budgets oder kleinen Strukturen?",
+                faq_a2: "Ja, absolut. Wir passen unsere Leistungen an die Größe und das Budget jeder Struktur an. Wir bieten stufenweise Pakete an.",
+                faq_q3: "Wie funktioniert die Zusammenarbeit auf Distanz?",
+                faq_a3: "Wir arbeiten hauptsächlich über WhatsApp, E-Mail und Google Drive. Jeder Kunde hat einen festen Ansprechpartner.",
+                faq_q4: "Bieten Sie Sonderangebote für Schulen an?",
+                faq_a4: "Ja. Wir haben ein Schulpaket speziell für Mittel- und Oberschulen entwickelt, mit angepasstem Preis und Begleitung entlang des Schulkalenders.",
+                faq_q5: "Wer schreibt die Texte und erstellt die Visuals?",
+                faq_a5: "Alles wird von unserem Team erledigt: Text, Grafikdesign, Fotografie und Videobearbeitung.",
+                faq_q6: "Kann ich jederzeit aufhören?",
+                faq_a6: "Ja. Unsere Monatspakete haben keine langfristige Bindung. Sie können zum Ende jedes Monats mit 15 Tagen Vorankündigung kündigen.",
+                contact_title: "Sprechen wir über Ihr Projekt",
+                contact_subtitle: "Wählen Sie den Kanal, der Ihnen am besten passt. Wir antworten in der Regel in weniger als 2 Stunden.",
+                contact_whatsapp_desc: "Der schnellste Weg, uns zu erreichen",
+                contact_email_desc: "Für detaillierte Anfragen und Angebote",
+                contact_location_title: "Standort",
+                contact_location_desc: "Unser Standort",
+                footer_desc: "Agentur für digitale Kommunikation mit Sitz in Yaoundé, Kamerun. Wir verleihen Ihrem Image Sichtbarkeit.",
+                footer_contact: "Kontakt", footer_location: "Yaoundé, Kamerun", footer_follow: "Folgen Sie uns", footer_rights: "Alle Rechte vorbehalten."
+            },
+            zh: {
+                lang_panel_title: "选择您的语言",
+                nav_mission: "我们的使命", nav_services: "我们的服务", nav_contact: "联系我们", nav_faq: "常见问题",
+                hero_tagline: "数字传播机构",
+                hero_slogan: "« 您的形象值得闪耀。我们助它成长。 »",
+                hero_btn: "探索我们的服务", hero_btn2: "联系我们",
+                stat1: "服务客户", stat2: "创作内容", stat3: "合作学校", stat4: "% 满意度",
+                mission_title: "我们的使命",
+                mission_text1: "帮助客户建立专业、连贯、有吸引力的数字形象，以取得切实成果，无需自己投入时间或专业技能。",
+                mission_text2: "我们相信贴近本地市场的传播方式，融合创意与绩效，适应喀麦隆市场的实际情况。",
+                vision_title: "我们的愿景",
+                vision_text: "让 PolariXe 成为雅温得数字传播领域的标杆机构，结合贴近性、创造力、规律性与对市场的深刻理解。",
+                val1: "贴近", val2: "专业", val3: "创意", val4: "绩效", val5: "进步",
+                services_title: "我们的服务",
+                services_subtitle: "为提升您的形象、实现您的目标提供全方位解决方案。",
+                srv1_title: "社交媒体管理", srv1_text: "在 Instagram、Facebook 和 TikTok 上运营您的社群。回复消息、竞品分析及月度报告。",
+                srv2_title: "内容创作", srv2_text: "平面设计、撰写有力文案，并制定适合您品牌形象的编辑日历。",
+                srv3_title: "摄影与视频", srv3_text: "为您的活动提供专业拍摄、企业形象拍摄及视频剪辑，为视觉传播注入活力。",
+                srv4_title: "数字广告", srv4_text: "在社交网络上投放定向广告活动，提升知名度并吸引优质潜在客户。",
+                srv5_title: "机构传播", srv5_text: "为学校和机构提供支持，展示其活动并方便家长获取信息。",
+                faq_title: "常见问题", faq_subtitle: "在合作之前您需要了解的一切。",
+                faq_q1: "多久能看到实际效果？",
+                faq_a1: "可见度方面的初步效果通常在第一个月内出现。显著成果需 3 至 6 个月来衡量。",
+                faq_q2: "您们与预算有限或小型机构合作吗？",
+                faq_a2: "当然。我们根据每个机构的规模与预算调整服务，并提供渐进式方案。",
+                faq_q3: "远程合作如何进行？",
+                faq_a3: "我们主要通过 WhatsApp、电子邮件和 Google Drive 协作。每位客户都有专属对接人。",
+                faq_q4: "您们为学校提供特别优惠吗？",
+                faq_a4: "是的。我们为初高中设计了专属学校套餐，价格优惠并配合校历提供支持。",
+                faq_q5: "文案与视觉由谁完成？",
+                faq_a5: "全部由我们团队完成：文案撰写、平面设计、摄影与视频剪辑。",
+                faq_q6: "我可以随时停止吗？",
+                faq_a6: "可以。我们的月度方案没有长期约束。您可在任何月底提前 15 天通知停止。",
+                contact_title: "谈谈您的项目",
+                contact_subtitle: "选择最适合您的联系方式。我们通常在 2 小时内回复。",
+                contact_whatsapp_desc: "最快联系我们的方式",
+                contact_email_desc: "适用于详细请求与报价",
+                contact_location_title: "位置",
+                contact_location_desc: "我们的运营基地",
+                footer_desc: "位于喀麦隆雅温得的数字传播机构。为您的形象赋予可见度。",
+                footer_contact: "联系", footer_location: "雅温得，喀麦隆", footer_follow: "关注我们", footer_rights: "版权所有。"
+            },
+            ja: {
+                lang_panel_title: "言語を選択",
+                nav_mission: "私たちの使命", nav_services: "サービス", nav_contact: "お問い合わせ", nav_faq: "FAQ",
+                hero_tagline: "デジタルコミュニケーションエージェンシー",
+                hero_slogan: "« あなたのイメージは輝く価値があります。私たちが育てます。 »",
+                hero_btn: "サービスを見る", hero_btn2: "お問い合わせ",
+                stat1: "支援したクライアント", stat2: "制作した投稿", stat3: "提携校", stat4: "% 満足度",
+                mission_title: "私たちの使命",
+                mission_text1: "お客様自身が時間や専門スキルを割くことなく、プロフェッショナルで一貫性のある魅力的なデジタルプレゼンスを構築し、具体的な成果につなげることを可能にします。",
+                mission_text2: "カメルーン市場の実情に合わせた身近なコミュニケーションを大切にし、創造性と成果を両立します。",
+                vision_title: "私たちのビジョン",
+                vision_text: "ヤウンデにおけるローカル組織のデジタル支援の基準となるエージェンシーを目指し、身近さ、創造性、継続性、市場理解を組み合わせます。",
+                val1: "身近さ", val2: "プロ意識", val3: "創造性", val4: "成果", val5: "漸進性",
+                services_title: "サービス",
+                services_subtitle: "あなたのイメージを加速させ、目標を達成するための総合ソリューション。",
+                srv1_title: "SNS運用", srv1_text: "Instagram、Facebook、TikTokでのコミュニティ運営。メッセージ対応、競合調査、月次レポート。",
+                srv2_title: "コンテンツ制作", srv2_text: "グラフィックデザイン、力強いコピーライティング、ブランドに合わせた編集カレンダーの作成。",
+                srv3_title: "写真・動画", srv3_text: "イベントのプロ撮影、コーポレート撮影、動画編集でビジュアルコミュニケーションを強化。",
+                srv4_title: "デジタル広告", srv4_text: "SNSでのターゲット広告を運用し、認知度を高め、質の高い見込み客を獲得。",
+                srv5_title: "組織コミュニケーション", srv5_text: "学校や組織を支援し、活動を発信し、保護者への情報伝達を円滑にします。",
+                faq_title: "よくある質問", faq_subtitle: "ご協力の前に知っておくべきこと。",
+                faq_q1: "具体的な成果までどのくらいかかりますか？",
+                faq_a1: "可視性への効果は通常1か月以内に現れます。顕著な成果は3〜6か月で測定されます。",
+                faq_q2: "予算が限られている小規模組織でも対応可能ですか？",
+                faq_a2: "もちろんです。各組織の規模と予算に合わせてサービスを調整し、段階的なプランをご用意しています。",
+                faq_q3: "遠隔での協業はどのように進めますか？",
+                faq_a3: "主にWhatsApp、メール、Google Driveで進めます。各クライアントに専任担当者がつきます。",
+                faq_q4: "学校向けの特別プランはありますか？",
+                faq_a4: "はい。中学校・高校向けの特別な学校パッケージをご用意しており、学校カレンダーに合わせたサポートを行います。",
+                faq_q5: "テキストとビジュアルは誰が作りますか？",
+                faq_a5: "すべて当チームが担当します：コピーライティング、グラフィックデザイン、写真、動画編集。",
+                faq_q6: "いつでも停止できますか？",
+                faq_a6: "はい。月次プランに長期契約はありません。15日前の通知でいつでも停止可能です。",
+                contact_title: "あなたのプロジェクトについて話しましょう",
+                contact_subtitle: "ご都合の良い連絡手段をお選びください。通常2時間以内に返信します。",
+                contact_whatsapp_desc: "最も迅速な連絡方法",
+                contact_email_desc: "詳細なご依頼・お見積もりに",
+                contact_location_title: "所在地",
+                contact_location_desc: "私たちの拠点",
+                footer_desc: "カメルーン・ヤウンデを拠点とするデジタルコミュニケーションエージェンシー。あなたのイメージに可視性を。",
+                footer_contact: "お問い合わせ", footer_location: "ヤウンデ、カメルーン", footer_follow: "フォローする", footer_rights: "全著作権所有。"
+            },
+            ar: {
+                lang_panel_title: "اختر لغتك",
+                nav_mission: "مهمتنا", nav_services: "خدماتنا", nav_contact: "اتصل بنا", nav_faq: "الأسئلة الشائعة",
+                hero_tagline: "وكالة الاتصال الرقمي",
+                hero_slogan: "« صورتك تستحق أن تلمع. نحن نجعلها تكبر. »",
+                hero_btn: "اكتشف خدماتنا", hero_btn2: "اتصل بنا",
+                stat1: "عملاء تمت مرافقتهم", stat2: "منشورات تم إنشاؤها", stat3: "مؤسسات تعليمية", stat4: "% رضا",
+                mission_title: "مهمتنا",
+                mission_text1: "تمكين عملائنا من بناء حضور رقمي احترافي ومتماسك وجذاب وموجه نحو نتائج ملموسة، دون الحاجة إلى تخصيص وقتهم أو مهاراتهم المتخصصة.",
+                mission_text2: "نؤمن بالاتصال القريب، المتكيف مع واقع السوق الكاميروني، والجمع بين الإبداع والأداء.",
+                vision_title: "رؤيتنا",
+                vision_text: "أن نجعل من PolariXe وكالة مرجعية في ياوندي في المرافقة الرقمية للمؤسسات المحلية، من خلال الجمع بين القرب والإبداع والانتظام وفهم السوق.",
+                val1: "القرب", val2: "الاحترافية", val3: "الإبداع", val4: "الأداء", val5: "التدرج",
+                services_title: "خدماتنا",
+                services_subtitle: "حلول شاملة لتعزيز صورتك وتحقيق أهدافك.",
+                srv1_title: "إدارة شبكات التواصل الاجتماعي", srv1_text: "تنشيط مجتمعاتك على إنستغرام وفيسبوك وتيك توك. الرد على الرسائل، ومراقبة المنافسة، وتقارير شهرية.",
+                srv2_title: "إنشاء المحتوى", srv2_text: "التصميم الجرافيكي، وكتابة نصوص مؤثرة، وإعداد أجندات تحريرية متكيفة مع هوية علامتك التجارية.",
+                srv3_title: "الصورة والفيديو", srv3_text: "تغطية احترافية لفعالياتك، وجلسات تصوير مؤسسية، ومونتاج فيديو لتعزيز تواصلك البصري.",
+                srv4_title: "الإعلان الرقمي", srv4_text: "إدارة حملات إعلانية موجهة على شبكات التواصل الاجتماعي لزيادة ظهورك وجذب عملاء محتملين.",
+                srv5_title: "الاتصال المؤسسي", srv5_text: "مرافقة المؤسسات التعليمية والهيئات لتثمين أنشطتها وتسهيل إيصال المعلومة إلى الأولياء.",
+                faq_title: "الأسئلة الشائعة", faq_subtitle: "كل ما تحتاج معرفته قبل التعاون معنا.",
+                faq_q1: "كم من الوقت قبل رؤية نتائج ملموسة؟",
+                faq_a1: "تظهر الآثار الأولى على الظهور عادة منذ الشهر الأول. أما النتائج الملموسة فتقاس على مدى 3 إلى 6 أشهر.",
+                faq_q2: "هل تعملون مع ميزانيات محدودة أو هياكل صغيرة؟",
+                faq_a2: "نعم، بالتأكيد. نكيف خدماتنا حسب حجم وميزانية كل هيكل. ونقدم صيغًا تدريجية.",
+                faq_q3: "كيف يتم التعاون عن بعد؟",
+                faq_a3: "نعمل أساسًا عبر واتساب والبريد الإلكتروني وجوجل درايف. ولكل عميل مسؤول واحد مخصص.",
+                faq_q4: "هل تقدمون عروضًا خاصة للمدارس؟",
+                faq_a4: "نعم. لدينا حزمة مدرسية مصممة خصيصًا للإعداديات والثانويات، بأسعار مناسبة ومواكبة للتقويم المدرسي.",
+                faq_q5: "من يكتب النصوص وينشئ الصور؟",
+                faq_a5: "كل شيء يقوم به فريقنا: الكتابة، والتصميم الجرافيكي، والتصوير، ومونتاج الفيديو.",
+                faq_q6: "هل يمكنني التوقف متى أردت؟",
+                faq_a6: "نعم. صيغنا الشهرية بدون التزام طويل الأمد. يمكنك التوقف في نهاية أي شهر، مع إشعار قبل 15 يومًا.",
+                contact_title: "لنتحدث عن مشروعك",
+                contact_subtitle: "اختر القناة التي تناسبك. نرد عادة في أقل من ساعتين.",
+                contact_whatsapp_desc: "أسرع طريقة للتواصل معنا",
+                contact_email_desc: "للطلبات المفصلة والعروض",
+                contact_location_title: "الموقع",
+                contact_location_desc: "قاعدة عملياتنا",
+                footer_desc: "وكالة اتصال رقمي مقرها ياوندي، الكاميرون. نمنح صورتك مزيدًا من الظهور.",
+                footer_contact: "اتصل", footer_location: "ياوندي، الكاميرون", footer_follow: "تابعنا", footer_rights: "جميع الحقوق محفوظة."
+            }
+        };
+
+        // ==========================================
+        // GESTION DE LA LANGUE
+        // ==========================================
+        const langToggle = document.getElementById('langToggle');
+        const langPanel = document.getElementById('langPanel');
+        const langOverlay = document.getElementById('langOverlay');
+        const langClose = document.getElementById('langClose');
+        const currentFlag = document.getElementById('currentFlag');
+        const currentLangCode = document.getElementById('currentLangCode');
+
+        const langFlags = {
+            fr: '🇫🇷', en: '🇬🇧', es: '🇪🇸', pt: '🇵🇹', it: '🇮🇹',
+            de: '🇩🇪', zh: '🇨🇳', ja: '🇯🇵', ar: '🇸🇦'
+        };
+        const langCodes = {
+            fr: 'FR', en: 'EN', es: 'ES', pt: 'PT', it: 'IT',
+            de: 'DE', zh: '中文', ja: '日本語', ar: 'ع'
+        };
+
+        let currentLang = localStorage.getItem("lang") || 'fr';
+
+        function updateTypedText() {
+            const sloganText = translations[currentLang].hero_slogan;
+            const typedEl = document.getElementById('typedText');
+            if (!typedEl) return;
+            typedEl.textContent = '';
+            let i = 0;
+            const typing = () => {
+                if (i < sloganText.length) {
+                    typedEl.textContent += sloganText.charAt(i);
+                    i++;
+                    setTimeout(typing, 40);
+                }
+            };
+            typing();
+        }
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem("lang", lang);
+            document.documentElement.lang = lang;
+            document.body.setAttribute('data-lang', lang);
+
+            currentFlag.textContent = langFlags[lang];
+            currentLangCode.textContent = langCodes[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            updateTypedText();
+        }
+
+        langToggle.addEventListener('click', () => {
+            langPanel.classList.add('active');
+            langOverlay.classList.add('active');
+        });
+        langClose.addEventListener('click', () => {
+            langPanel.classList.remove('active');
+            langOverlay.classList.remove('active');
+        });
+        langOverlay.addEventListener('click', () => {
+            langPanel.classList.remove('active');
+            langOverlay.classList.remove('active');
+        });
+
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyLanguage(btn.dataset.lang);
+                setTimeout(() => {
+                    langPanel.classList.remove('active');
+                    langOverlay.classList.remove('active');
+                }, 200);
+            });
+        });
+
+        applyLanguage(currentLang);
+
+        // ==========================================
+        // THÈME
+        // ==========================================
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const icons = {
+            moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>',
+            sun: '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'
+        };
+
+        let currentTheme = localStorage.getItem("theme") || "system";
+        function applyTheme(theme) {
+            if (theme === "dark") { document.body.classList.add("dark-mode"); themeIcon.innerHTML = icons.sun; }
+            else if (theme === "light") { document.body.classList.remove("dark-mode"); themeIcon.innerHTML = icons.moon; }
+            else {
+                if (prefersDarkScheme.matches) { document.body.classList.add("dark-mode"); themeIcon.innerHTML = icons.sun; }
+                else { document.body.classList.remove("dark-mode"); themeIcon.innerHTML = icons.moon; }
+            }
+        }
+        applyTheme(currentTheme);
+        prefersDarkScheme.addEventListener("change", () => { if (currentTheme === "system") applyTheme("system"); });
+        themeToggle.addEventListener('click', () => {
+            if (currentTheme === "light") currentTheme = "dark";
+            else if (currentTheme === "dark") currentTheme = "system";
+            else currentTheme = "light";
+            localStorage.setItem("theme", currentTheme);
+            applyTheme(currentTheme);
+        });
+
+        // ==========================================
+        // ANIMATIONS AU SCROLL + COMPTEURS
+        // ==========================================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.querySelector('.stat-number')) {
+                        const counters = entry.target.querySelectorAll('.stat-number');
+                        counters.forEach(counter => {
+                            const target = +counter.getAttribute('data-count');
+                            let count = 0;
+                            const speed = target / 50;
+                            const updateCount = () => {
+                                if (count < target) {
+                                    count += Math.ceil(speed);
+                                    if (count > target) count = target;
+                                    counter.textContent = count + (target === 100 ? '' : '+');
+                                    requestAnimationFrame(updateCount);
+                                } else {
+                                    counter.textContent = target + (target === 100 ? '%' : '+');
+                                }
+                            };
+                            updateCount();
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==========================================
+        // FAQ ACCORDÉON
+        // ==========================================
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // ==========================================
+        // SPARKLES
+        // ==========================================
+        if (window.innerWidth > 992) {
+            let lastSparkle = 0;
+            document.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastSparkle < 60) return;
+                lastSparkle = now;
+                
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                
+                const size = Math.random() * 6 + 4;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+                
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 800);
+            });
+        }
+
+        // ==========================================
+        // HEADER AU SCROLL
+        // ==========================================
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        // ==========================================
+        // BARRE DE PROGRESSION & RETOUR EN HAUT
+        // ==========================================
+        const progressBar = document.getElementById('progressBar');
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+            if (scrollTop > 500) backToTop.classList.add('visible');
+            else backToTop.classList.remove('visible');
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
